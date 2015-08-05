@@ -1,0 +1,38 @@
+/* try http://www.csszengarden.com/163/ */
+
+menuitem {
+   margin: 0.5em;
+   background-color: rgba(182, 238, 255, 0.53);
+   color: #2f14b9;
+   padding: 0.3em 0.5em;
+   border-radius: 0.5em;
+}
+
+#main {
+   background-color: rgba(67, 255, 247, 0.22);
+}
+
+#folders {
+   vertical-align: top;
+   display: inline-block;
+   background-color: rgba(13, 255, 208, 0.37);
+   padding: 0em 1em 0em 0.5em;
+   bottom : 0em;
+}
+
+#folders ul {
+   padding-left: 0em;
+}
+
+main {
+   display: inline-block;
+   background-color: gold;
+   padding: 1em 1em;
+   margin-left: 1em;
+}
+
+.dialog {
+   display: none;
+   width: 200px;
+   margin: auto 0;
+}

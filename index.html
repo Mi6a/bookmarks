@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <title>Памятека</title>
+   <meta charset="UTF-8">
+   <link rel="stylesheet" href="bookmarks.css" type="text/css">
+   <script src="js/libs/jquery/jquery.js"></script>
+   <script src="js/bookmarks.js"></script>
+</head>
+
+<body>
+<header>
+   <h1 id="siteName">Памятека</h1>
+   <div id="login"></div>
+   <menu type="toolbar" id="menuTop">
+      <li onclick="selectAll()">Все</li>
+      <li onclick="createTopic()">Новая тема</li>
+      <li onclick="createLink()">Новая ссылка</li>
+      <li onclick="createNote()">Новая запись</li>
+      <li onclick="delSelected()">Убрать</li>
+   </menu>
+</header>
+
+<main>
+   <div id="tags">
+      <div id="tagBtns"><a href="">Home</a><a href="">Sort</a></div>
+      <div class="tagList">
+         <div>111 end1111</div>
+         <div>222 2222222  end2</div>
+         <div>3333 33333333  3333 333 end333</div>
+         <div>444 44444444  4444 4444444 4444444 44444  end444</div>
+      </div>
+   </div>
+   <section id="folderCur">
+      <article>
+         <div class = "nodeHeader">
+            <span>Тема 1</span>
+            <span class="nodeBtns">
+                  <a onclick="showDetails(this)">Откр</a>
+                  <a onclick="removeNode(this)">Дел</a>
+                  <a onclick="selectNode(this)">Мет</a>
+            </span>
+         </div>
+
+         <div>
+            content conte conten content contentco content qwrwerwe  qwerwer qwerwer qwrwerwe
+            rqwrw qwerw qwerwe qwerwe qwer qwer 4wwerwer qwerwerwer content
+         </div>
+         <div><em>Tags: </em>tag1 tag2</div>
+      </article>
+
+      <article>
+         <div class = "nodeHeader">
+            <span>Link 1</span>
+            <span class="nodeBtns"></span>
+         </div>
+
+         <div><a href="">http://3bears.com</a></div>
+         <div>some comment</div>
+      </article>
+
+      <article>
+         <div class = "nodeHeader">
+            <span>Note 1</span>
+            <span class="nodeBtns"></span>
+         </div>
+         <div>some comment</div>
+      </article>
+
+      <article>Тема 1</article>
+      <article>Тема 1</article>
+   </section>
+</main>
+
+<footer><small>Developed by МБ</small></footer>
+
+<!-- Set of hidden messages/windows -->
+<!-- Форма для ввода темы -->
+<div id="editFolder" class="dialog">
+   <form >
+      <fieldset>
+         <legend>Тема</legend>
+         <p><label>Название: <input size="100" id="editFolderName"></label></p>
+         <p><label>Описание: <input size="100" id="editFolderDescr"></label></p>
+      </fieldset>
+      <button onclick="addFolder()">Ладно</button> <button>Нет</button>
+   </form>
+</div>
+<!-- Форма для ввода ссылки -->
+<div class="dialog">
+   <form >
+      <fieldset>
+         <legend>Ссылка</legend>
+         <p><label>url: <input></label></p>
+         <p><label>Описание: <input size="50"></label></p>
+      </fieldset>
+      <button>Ладно</button>
+   </form>
+</div>
+<!-- end Set of hidden messages/windows -->
+
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <title></title>
+   <link rel="stylesheet" href="bookmarks.css" type="text/css">
+   <script>
+// !!! Base for all classes using inheritance
+function ParentPriv(a, b)
+{
+   this._a = a;
+   this._b = b;
+}
+
+ParentPriv.prototype  = {
+   getB: function() { return this._b; }  
+};
+
+function Parent(a,b) {
+   // if _priv is a complex, then can put it into the prototype - see below
+   var _priv = new ParentPriv(a,b);
+   
+   return {
+      getA : function() { return _priv._a; },
+      getB : function() { return _priv.getB(); }
+   };
+}
+
+function ChildPriv(c) {
+   this._c = c;
+}
+
+ChildPriv.prototype  = {
+   getC : function() { return this._c; },
+   doSome: function() { alert(this._c); }
+};
+
+function Child(c) {
+   var _priv = new ChildPriv(c);
+   this.getC = function() { return _priv.getC(); };
+}
+
+Child.count = 0;
+
+function getChild(a,b,c) {
+   Child.prototype = Parent(a,b); 
+   Child.count++;
+   return new Child(c);
+}      
+   </script>
+</head>
+<body>
+   <a href="">Somelink</a>
+</body>
+</html>

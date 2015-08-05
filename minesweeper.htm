@@ -1,0 +1,85 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Minesweeper 1.0</title>
+    <link href="//fonts.googleapis.com/css?family=Vollkorn" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="minesweeper/ms.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <script src="minesweeper/ms.js"></script>
+</head>
+<body>
+    <div id="top"></div>
+    <!-- The main/game table -->
+    <div id="main"></div>
+    <div id="bear" class="reg"></div>
+
+    <!-- Page navigation -->
+    <nav>
+        <ul>
+            <li><a class="navbtn" href="">New game</a></li>
+            <li><a class="navbtn" href="">Settings</a></li>
+            <li><a class="navbtn" href="">Rules</a></li>
+        </ul>
+    </nav>
+    <!-- end Page navigation -->
+    
+    <!-- Loading message, disappearing when game is created -->
+    <div class="dim">
+        <div id="loading">
+            <div class="msgpadding">
+                <span>Loading, please wait...</span>
+            </div>
+        </div>
+    </div>
+    <!-- end Loading message -->
+
+    <!-- Set of hidden messages/windows: Rules of the game, Source Code; the messages appears when clicked on a corresponding button -->
+    <div class="dim hide">
+        <div id="rules">
+            <div class="msgpadding">
+                <a class="clsbtn" href="">X</a>
+                <span>How to Play Minesweeper</span>
+                <p>Minesweeper is a game that's installed by default on most computers that come with Windows. Most people like to just click around the program hoping to not hit a mine, but if you want to master the game, then you have to play with strategy. The most important skill you can use while playing Minesweeper is a process of elimination.</p>
+                <span>Easy 5 steps manual:</span>
+                <ol>
+                    <li>This field have ten mines.</li>
+                    <li>Click any square, preferably towards the middle. Most Minesweeper players click random squares until a group of squares "opens" up. If 4 or 5 squares opened after your click, it's time to evaluate the numbers. If only one square opens after your click, find another random square.</li>
+                    <li>Check the numbers to find bombs. As you uncover tiles, you will see numbers revealed. A number means that there are that number of bombs touching that tile (both sides, top/bottom, and diagonally). If you see a 1 on the board, it means that square is touching exactly 1 mine.</li>
+                    <li>Click known safe squares. Eliminate squares that can't possibly contain mines by left clicking. Say you found a 1, and you're pretty sure where the mine for that 1 is. You can click all the other squares around that 1 to open them, because the 1 can only be in contact with a single mine. *Use all of the numbers in a given area to figure out where the mines are.</li>
+                    <li>Keep moving through a process of elimination.</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+    <!-- end Set of hidden messages/windows -->
+
+    <!-- SFX, sound effects -->
+    <audio preload="auto" autoplay loop>
+        <source src="minesweeper/background.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="sfxbegin" preload="auto">
+        <source src="minesweeper/begin.mp3" type="audio/mpeg">
+        <source src="minesweeper/begin.wav" type="audio/wav">
+    </audio>
+    <audio id="sfxopen" preload="auto">
+        <source src="minesweeper/open.mp3" type="audio/mpeg">
+        <source src="minesweeper/open.wav" type="audio/wav">
+    </audio>
+    <audio id="sfxwin" preload="auto">
+        <source src="minesweeper/win.mp3" type="audio/mpeg">
+        <source src="minesweeper/win.wav" type="audio/wav">
+    </audio>
+    <audio id="sfxminexpl" preload="auto">
+        <source src="minesweeper/minexpl.mp3" type="audio/mpeg">
+        <source src="minesweeper/minexpl.wav" type="audio/wav">
+    </audio>
+    <!-- end SFX -->
+    
+    <footer><small>&copy; Copyright 2014, All rights reserved.<br>Developed by YA.</small></footer>
+
+</body>
+</html>

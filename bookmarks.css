@@ -1,0 +1,86 @@
+
+#siteName {
+   color: #286fd2;
+}
+
+#menuTop li {
+   display: inline;
+   margin: 0.5em;
+   background-color: rgba(182, 238, 255, 0.45);
+   color: #2f14b9;
+   padding: 0.3em 0.5em;
+   border-radius: 0.5em;
+   cursor: pointer;
+}
+
+#menuTop li:hover {
+   background-color: rgba(182, 238, 255, 0.75);   
+}
+
+main {
+   display: flex;
+   flex: auto;
+   flex-flow: row;
+   max-width: 60em;
+   background-color: rgba(67, 255, 247, 0.22);
+}
+
+#tags {
+   min-width: 10em;
+   max-width: 30%;
+   padding: 0em 1em 0em 0.5em;
+   margin: 0em;
+   background-color: rgba(13, 255, 208, 0.20);
+}
+
+#tagBtns {
+   margin-bottom: 1em;
+}
+
+#tagBtns a {
+   margin-right: 0.5em;
+}
+
+.tagList div {
+   color: #2f14b9;
+   overflow: hidden;
+   white-space: nowrap;
+   text-overflow: ellipsis;
+   cursor: pointer;
+}
+
+.tagList div:hover {
+   overflow: visible;
+   background-color: rgba(13, 255, 208, 0.45);
+}
+
+#folderCur {
+   padding: 1em 1em;
+   margin-left: 1em;
+   color: #1954b1 ;
+}
+
+.nodeHeader {
+   display: flex;
+}
+
+.nodeBtns {
+   margin-left: auto;
+}
+
+#folderCur article {
+   border: thin solid black;
+   border-radius: 0.5em;
+   margin-bottom: 0.5em;
+   padding: 0.5em;
+}
+
+.dialog {
+   position: absolute;
+   display: none;
+   width: 50%;
+   top: 10em;
+   left: 10em;
+   z-index: 2;
+   background-color: rgb(36, 255, 222);
+}
