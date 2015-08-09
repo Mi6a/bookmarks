@@ -24,9 +24,9 @@
 </header>
 
 <main>
-   <div id="tags">
-      <div id="tagBtns"><a href="">Home</a><a href="">Sort</a></div>
-      <div class="tagList">
+   <div id="folders">
+      <div id="folderBtns"><a href="">Home</a><a href="">Sort</a></div>
+      <div id="folderList">
          <div>111 end1111</div>
          <div>222 2222222  end2</div>
          <div>3333 33333333  3333 333 end333</div>
@@ -34,27 +34,27 @@
       </div>
    </div>
    <section id="folderCur">
-      <article>
-         <div class = "nodeHeader">
-            <span>Тема 1</span>
-            <span class="nodeBtns">
+      <article class="itemFolder">
+         <div class = "itemHeader">
+            <span class="itemName">Тема 1</span>
+            <span class="itemBtns">
                   <a onclick="showDetails(this)">Откр</a>
                   <a onclick="removeNode(this)">Дел</a>
                   <a onclick="selectNode(this)">Мет</a>
             </span>
          </div>
 
-         <div>
+         <div class="itemNote">
             What's in the brain that ink may character Which hath not figured to thee my true spirit?
             What's new to speak, what now to register, That may express my love, or thy dear merit?
          </div>
-         <div><em>Tags: </em>tag1 tag2</div>
+         <div  class="itemTags"><em>Tags: </em>tag1 tag2</div>
       </article>
 
-      <article>
-         <div class = "nodeHeader">
+      <article class="itemLink">
+         <div class = "itemHeader">
             <span>Link 1</span>
-            <span class="nodeBtns"></span>
+            <span class="itemBtns"></span>
          </div>
 
          <div><a href="">http://3bears.com</a></div>
@@ -62,9 +62,9 @@
       </article>
 
       <article>
-         <div class = "nodeHeader">
+         <div class = "itemHeader">
             <span>Note 1</span>
-            <span class="nodeBtns"></span>
+            <span class="itemBtns"></span>
          </div>
          <div>some comment</div>
       </article>

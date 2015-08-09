@@ -10,7 +10,10 @@ var BearsNS = BearsNS || (function() {
 
 (function() {
 
-var ns = BearsNS();
+var ns = BearsNS(),
+   model = null,
+   view = null,
+   mgr = null;
 
 // model
 function Model()
@@ -37,7 +40,7 @@ Error = {
    NotIndex : 1
 };
 
-var model = new Model();
+model = new Model();
 
 // Item is parent class for all item types
 //
@@ -154,14 +157,14 @@ var View = {
    addFolder : function(itemFld) { return addFolderImpl(itemFld); },
 
    addFolderImpl : function(itemFld) {
-      
+      var od =
    },
 };
 
 // Event handlers
 ns.eventHandlers = {
    clearGarbage: function() {
-         $('#tags .tagList').empty();
+         $('#folderList').empty();
          $('#folderCur').empty();
       },
 
@@ -180,5 +183,5 @@ ns.eventHandlers = {
 }());
 
 $(document).ready(function() {
-   BearsNS().eventHandlers.clearGarbage();
+//   BearsNS().eventHandlers.clearGarbage();
 });

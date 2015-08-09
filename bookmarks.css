@@ -25,7 +25,7 @@ main {
    background-color: rgba(67, 255, 247, 0.22);
 }
 
-#tags {
+#folders {
    min-width: 10em;
    max-width: 30%;
    padding: 0 1em 0 0.5em;
@@ -33,15 +33,15 @@ main {
    background-color: rgba(13, 255, 208, 0.20);
 }
 
-#tagBtns {
+#folderBtns {
    margin-bottom: 1em;
 }
 
-#tagBtns a {
+#folderBtns a {
    margin-right: 0.5em;
 }
 
-.tagList div {
+#folderList div {
    color: #2f14b9;
    overflow: hidden;
    white-space: nowrap;
@@ -49,7 +49,7 @@ main {
    cursor: pointer;
 }
 
-.tagList div:hover {
+#folderList div:hover {
    overflow: visible;
    background-color: rgba(13, 255, 208, 0.45);
 }
@@ -58,14 +58,7 @@ main {
    padding: 1em 1em;
    margin-left: 1em;
    color: #1954b1 ;
-}
-
-.nodeHeader {
-   display: flex;
-}
-
-.nodeBtns {
-   margin-left: auto;
+   width: 100%;
 }
 
 #folderCur article {
@@ -73,6 +66,19 @@ main {
    border-radius: 0.5em;
    margin-bottom: 0.5em;
    padding: 0.5em;
+}
+
+.itemHeader {
+   display: flex;
+}
+
+.itemBtns {
+   margin-left: auto;
+}
+
+.itemNote {
+   position: absolute;
+   display: none;
 }
 
 .dialog {
