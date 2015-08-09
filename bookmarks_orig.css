@@ -16,12 +16,12 @@ menuitem {
    vertical-align: top;
    display: inline-block;
    background-color: rgba(13, 255, 208, 0.37);
-   padding: 0em 1em 0em 0.5em;
-   bottom : 0em;
+   padding: 0 1em 0 0.5em;
+   bottom : 0;
 }
 
 #folders ul {
-   padding-left: 0em;
+   padding-left: 0;
 }
 
 main {

@@ -28,8 +28,8 @@ main {
 #tags {
    min-width: 10em;
    max-width: 30%;
-   padding: 0em 1em 0em 0.5em;
-   margin: 0em;
+   padding: 0 1em 0 0.5em;
+   margin: 0;
    background-color: rgba(13, 255, 208, 0.20);
 }
 

@@ -6,6 +6,37 @@
 
 "use strict";
 
+// jQuery
+// on document ready
+$(document).ready(function() {}); // === $(function(){})
+// conflicts with other libs
+(function( $ ) { /* Your jQuery code here, using the $ */ })( jQuery );
+
+// attributes
+// attr setter
+$( "a" ).attr( "href", "allMyHrefsAreTheSameNow.html" );
+
+$( "a" ).attr({
+   title: "all titles are the same too!",
+   href: "somethingNew.html"
+});
+
+// attr getter
+$( "a" ).attr( "href" );
+
+// !!! Selecting elements
+$( "#myId" ); // by id
+$( ".myClass" ); // by class
+$( "input[name='first_name']" ); // by attr
+$( "#contents ul.people li" ); // by css
+
+// events
+$("a").click(function(){});
+
+// utilities
+// get page
+$.get( "myhtmlpage.html", function() {});
+
 // Inheritance - the right way
 
 // Example 1: class Impl inherits class Interface
@@ -123,22 +154,17 @@ function Parent(a,b) {
 }
 
 function Child(a, b, c) {
-   var 
-      _priv = {
+   var _priv = {
             _c : c,
             doSome: function() { alert(_priv._c); }
-         },
-      _impl = Parent(a,b);
-      
-   return {
-      getA : function() { return _impl.getA(); },
-      getC : function() { return _priv._a; }
-   };
+         };
+
+   this.getC = function getC() { return _priv._c; };
 }
 
 function getChild(a,b,c) {
-   Child.prototype = Parent(a,b); 
-   return new Child(c);
+   var child = Object.create(Parent(a,b));
+   Child.call(this, c);
 }
 
 // Improve above using prototypes
@@ -182,10 +208,9 @@ function Child(c) {
 Child.count = 0;
 
 function getChild(a,b,c) {
-   Child.prototype = Parent(a,b); 
-   return new Child(c);
+   var child = Object.create(Parent(a,b));
+   Child.call(this, c);
 }
-
 
 // from Mozilla - regular way - no privacy whatsoever !!!
 function Employee() {
@@ -237,8 +262,6 @@ child.gamma; // returns 'public var' - we have inherited from parent
 
 
 //------------------------ some of the JavaScript useful staff -----------------//
-// create Object
-// var v = Object.create(prototype)
 
 var switchProto = {
     isOn: function isOn() {

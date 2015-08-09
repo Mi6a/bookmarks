@@ -369,7 +369,7 @@ function getSettingsFromCookies() {
     });
     var expSoon = Date.now() + 15*24*60*60*1000;
     if(cook.mineexp && (expSoon > cook.mineexp))
-        saveSettingsToCookies(cook.fieldsize, cook.mineCnt)
+        saveSettingsToCookies(cook.fieldsize, cook.mineCnt);
     return cook;
 }
 

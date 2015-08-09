@@ -10,14 +10,18 @@ var BearsNS = BearsNS || (function() {
 
 (function() {
 
-var ns = BearsNS(),
-    // model
-    Model = {
-      _top : [], // top level folder, where folder is array of nodes of either folder, node or url types
-      _tags : [], // array of tags
-      _fld : this._top, // current folder
-      _item : null,
-      
+var ns = BearsNS();
+
+// model
+function Model()
+{
+   this._top = []; // top level folder, where folder is array of Item objects of either folder, node or url types
+   this._tags = []; // array of tags
+   this._fld = this._top; // current folder
+   this._item = null;
+}
+
+Model.prototype = {
       get top() { return this._top; },
       get tags() { return this._tags; },
 
@@ -26,12 +30,14 @@ var ns = BearsNS(),
    
       set item(item) { this._item = item; },
       get item() { return this._item; }
-   },
-   
-   Error = {
-      NotNode : 0,
-      NotIndex : 1
    };
+   
+Error = {
+   NotNode : 0,
+   NotIndex : 1
+};
+
+var model = new Model();
 
 // Item is parent class for all item types
 //
@@ -54,18 +60,18 @@ Item.prototype = {
    get descr() { return this._descr; },
    get type() { return this._type; },
    
-   isFolder : function() { return this.FOLDER === _type; },
-   isLine : function() { return this.LINE === _type; },
-   isUrl : function() { return this.URL === _type; },
-   isNote : function() { return this.NOTE === _type; },
+   isFolder : function() { return this.FOLDER === this._type; },
+   isLine : function() { return this.LINE === this._type; },
+   isUrl : function() { return this.URL === this._type; },
+   isNote : function() { return this.NOTE === this._type; },
    
    parent: function() { return this._parent; },
    setParent : function(parent) { this._parent = parent; },
    
-   setUsed : function() { this._used = Date(); },
+   setUsed : function() { this._used = new Date(); },
    lastUsed : function() { return this._used; },
 
-   modify : function() { this._modified = Date(); },
+   modify : function() { this._modified = new Date(); },
    modified : function() { return this._modified; }
 };
 
@@ -143,6 +149,15 @@ function Note(name, descr, parent) {
    Item.call(this, name, descr, Item.NOTE, parent);
 }
 
+//
+var View = {
+   addFolder : function(itemFld) { return addFolderImpl(itemFld); },
+
+   addFolderImpl : function(itemFld) {
+      
+   },
+};
+
 // Event handlers
 ns.eventHandlers = {
    clearGarbage: function() {
@@ -150,7 +165,7 @@ ns.eventHandlers = {
          $('#folderCur').empty();
       },
 
-   createTopic: function () {
+   showCreateFolder: function () {
          document.getElementById("editFolder").style.display = "block";
       },
 
@@ -164,6 +179,6 @@ ns.eventHandlers = {
 
 }());
 
-window.onload = function() {
+$(document).ready(function() {
    BearsNS().eventHandlers.clearGarbage();
-};
+});
