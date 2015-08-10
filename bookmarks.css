@@ -58,7 +58,7 @@ main {
    padding: 1em 1em;
    margin-left: 1em;
    color: #1954b1 ;
-   width: 100%;
+   width: 100%; /* take 100% from the rest of #main */
 }
 
 #folderCur article {

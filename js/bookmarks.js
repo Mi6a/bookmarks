@@ -13,7 +13,8 @@ var BearsNS = BearsNS || (function() {
 var ns = BearsNS(),
    model = null,
    view = null,
-   mgr = null;
+   mgr = null,
+   dom = ns.dom;
 
 // model
 function Model()
@@ -152,14 +153,71 @@ function Note(name, descr, parent) {
    Item.call(this, name, descr, Item.NOTE, parent);
 }
 
-//
-var View = {
-   addFolder : function(itemFld) { return addFolderImpl(itemFld); },
+// View
 
-   addFolderImpl : function(itemFld) {
-      var od =
-   },
-};
+function View() {
+   this.curFolder = document.getElementById("folderCur");
+}
+
+View.prototype = (function() {
+
+   function createElem(tag, className, content) {
+      var res = {elem: tag};
+      if(className) res.class = className;
+      if(content) res.text = content;
+      return res;
+   }
+
+   function createA(fooClick, content) {
+      return { elem: "a", text: content, attr: {onclick: fooClick} };
+   }
+
+   var articleBtns  = {
+      elem: "span", class: "itemBtns",
+      sub: [
+         createA("showDetails()", "Откр"),
+         createA("showDetails()", "Дел"),
+         createA("selectNode()", "Мет")]
+      };
+
+   function createArticle(className, nameItem, note, tags) {
+      var res = {
+         elem: "article", class: className,
+         sub: [
+            {
+               elem: "div", class: "itemHeader",
+               sub: [
+                  createElem("span", "itemName", nameItem),
+                  articleBtns
+               ]
+            },
+            createElem("div", "itemNote", note),
+            {
+               elem: "div", class: "itemTags",
+               sub: [
+                  createElem("em", null, "Таги: "),
+                  {text : ""}
+               ]
+            }
+         ]
+      };
+      if(tags) { /* add tags */ }
+      return res;
+   }
+
+   function addFolderImpl (itemFld) {
+      var elemFolder = dom.mk(createArticle(itemFolder, itemFld.name(), itemFld.descr()));
+      view.curFolder.appendChild(elemFolder);
+   }
+
+   // prototype interface
+   return {
+      addFolder : function(itemFld) { return addFolderImpl(itemFld); },
+
+   };
+}());
+
+view = new View();
 
 // Event handlers
 ns.eventHandlers = {
