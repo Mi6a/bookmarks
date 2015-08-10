@@ -175,9 +175,9 @@ View.prototype = (function() {
    var articleBtns  = {
       elem: "span", class: "itemBtns",
       sub: [
-         createA("showDetails()", "Откр"),
-         createA("showDetails()", "Дел"),
-         createA("selectNode()", "Мет")]
+         createA("showDetails()", "РћС‚РєСЂ"),
+         createA("showDetails()", "Р”РµР»"),
+         createA("selectNode()", "РњРµС‚")]
       };
 
    function createArticle(className, nameItem, note, tags) {
@@ -195,7 +195,7 @@ View.prototype = (function() {
             {
                elem: "div", class: "itemTags",
                sub: [
-                  createElem("em", null, "Таги: "),
+                  createElem("em", null, "РўР°РіРё: "),
                   {text : ""}
                ]
             }
